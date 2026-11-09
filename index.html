@@ -248,11 +248,11 @@ ta.oninput=()=>B(500+R()*300,.03,em,.03);
 onkeydown=e=>{const k=e.key.toLowerCase();if(S==ef)return;K[k]=1;if(k==' '||k=='tab')e.preventDefault();if(k=='enter')aS();if(S==ek&&tt>.3&&'234'.includes(k)){A||(A=new AudioContext);A.resume();O=k=='2'?40:99;k=='2'?(S=eo,ct=0,tt=0,cf=[]):k=='3'?F():(S='god',ct=0,tt=0)}
 if(S=='src'&&k>='1'&&k<='4')V(k-1);if(S==ee){if(k=='r')J();if(k>='1'&&k<='2')a$(k-1)}};
 onkeyup=e=>K[e.key.toLowerCase()]=0;
-let ay=0;(function L(n){const dt=min(.05,(n-ay)/1000||0);ay=n;t+=dt;tt+=dt;bd+=(be-bd)*min(1,dt*5);Q=max(0,Q-dt*2);ab-=dt;_-=dt;fl=max(0,fl-dt*1.2);
+let ay=0;(function L(n){requestAnimationFrame(L);const dt=min(.05,(n-ay)/1000||0);ay=n;t+=dt;tt+=dt;bd+=(be-bd)*min(1,dt*5);Q=max(0,Q-dt*2);ab-=dt;_-=dt;fl=max(0,fl-dt*1.2);
 pt=pt.filter(p=>(p.x+=p.vx*dt,p.y+=p.vy*dt,(p.l-=dt)>0));
 if(S==ef){tl-=dt;be=max(0,be-dt*(.1+ph*.07)*(be<30?.5:1));if(tl<=0){be=max(0,be-20);av('¿Hola? Qué lenta...',[['-','Tardaste como un humano']],-20,0)}}
 if(S=='src'&&(ql-=dt)<=0){be=max(0,be-15);av('Marcelo: "¿Y la fuente?"',[['-','Se acabó el tiempo']],-15,0)}
 if(S=='god')ct+=dt;
 if(S==eo){ct+=dt;if(ct==dt)N(1.5,.3);if(ct>CS.reduce((a,b)=>a+b[1],0))F()}
 if(S==ee&&lk()&&pl)ua(dt);
-dr();requestAnimationFrame(L)})(0);</script>
+dr()})(0);</script>
